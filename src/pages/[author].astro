@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export function getStaticPaths() {
+	return [
+		{ params: { author: "jose" } },
+		{ params: { author: "sixto" } }
+	]
+}
+
+const { author } = Astro.params;
+---
+
+<Layout title={`Author | ${author}`}>
+	<p>{author}</p>
+</Layout>

@@ -1,0 +1,38 @@
+.headline {
+	min-height: 24rem;
+	background-color: lightcyan;
+}
+
+.avatar {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.2rem;
+	min-height: inherit;
+}
+
+.avatar__img {
+	border-radius: 9999px;
+	width: 9rem;
+	height: 9rem;
+	overflow: hidden;
+	background-color: white;
+}
+
+.avatar__name {
+	font-size: 1.4rem;
+}
+
+.avatar__social {
+	display: flex;
+	gap: 12px;
+}
+
+.avatar__social > span {
+	display: flex;
+	padding: 8px;
+	border-radius: 999px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
