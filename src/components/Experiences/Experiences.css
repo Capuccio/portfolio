@@ -12,7 +12,7 @@
 
 .experience::before {
 	content: "";
-	border-left: 2px solid red;
+	border-left: 2px solid #D3D3D3;
 	margin-right: 40px;
 	position: absolute;
 	height: 100%;
@@ -20,15 +20,35 @@
 }
 
 .experience__dot {
-	color: blue;
+	color: #3de680;
 	font-size: 3rem;
 	position: absolute;
-	left: -43.5px;
+	left: -44px;
 }
 
-.experience-info {
-	display: flex;
-	flex-direction: column;
+.experience-title__job {
+	color: #2A9A57;
+	line-height: 1.75rem;
+	font-size: 1.25rem;
+}
+
+.experience-title__company {
+	font-weight: 600;
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	color: #4A4A4A;
+}
+
+.experience-title__time {
+	font-size: 0.85rem;
+	color: rgba(75, 85, 99, 0.85);
+}
+
+.experience-info__description {
+	margin-top: 1rem;
+	max-width: 75ch;
+	text-wrap: pretty;
+	color: rgba(75, 85, 99, 0.85);
 }
 
 @media (min-width: 768px) {

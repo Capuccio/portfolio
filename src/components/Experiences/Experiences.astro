@@ -10,7 +10,7 @@ const EXPERIENCES = [
 			"Mantuve y mejoré el Panel Administrativo, solucionando errores, mejorando rendimiento y añadiendo módulos. Desarrollé features del marketplace con el diseñador UX/UI, actualicé estilos CSS, y colaboré con el equipo de backend para trabajar endpoints."
 	},
 	{
-		name: "Ssr Frontend",
+		name: "Semi Senior Frontend",
 		company: "Toucan Talent",
 		date: "Diciembre 2022 - Julio 2023",
 		description:
@@ -34,15 +34,13 @@ const EXPERIENCES = [
 					<span class="experience__dot">•</span>
 					<div class="experience-info">
 						<div class="experience-title">
-							<h3 class="experience-title__job">
-							{experience.name}
-							</h3>
-							<h4>{experience.company}</h4>
+							<h3 class="experience-title__job">{experience.name}</h3>
+							<h4 class="experience-title__company">{experience.company}</h4>
 							<span class="experience-title__time">
 								<time>{experience.date}</time>
 							</span>
 						</div>
-						<div>
+						<div class="experience-info__description">
 							{experience.description}
 						</div>
 					</div>
