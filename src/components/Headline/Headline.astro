@@ -29,7 +29,7 @@ const CONTACTS = [
 
 <section data-section="headline" class="headline">
 	<span class="headline__name">
-		Soy José Córdova
+		Soy Jose Cordova
 	</span>
 	<div class="avatar">
 		<div class="avatar__img">
@@ -40,12 +40,12 @@ const CONTACTS = [
 		<strong>Ingeniero en Informática</strong> con +5 años de experiencia de Quito, Ecuador 🇪🇨.
 		Avanzando hacia la digitalización.
 	</p>
-	<div class="headline__social">
+	<nav class="headline__social">
 		{CONTACTS.map((contact) => (
 			<a href={contact.link} target="_blank">
 				<contact.icon />
 				{contact.name}
 			</a>
 		))}
-	</div>
+	</nav>
 </section>
