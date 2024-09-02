@@ -41,14 +41,14 @@
 
 .experience-title__time {
 	font-size: 0.85rem;
-	color: rgba(75, 85, 99, 0.85);
+	color: var(--text-gray);
 }
 
 .experience-info__description {
 	margin-top: 1rem;
 	max-width: 75ch;
 	text-wrap: pretty;
-	color: rgba(75, 85, 99, 0.85);
+	color: var(--text-gray);
 }
 
 @media (min-width: 768px) {
