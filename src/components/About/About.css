@@ -1,0 +1,25 @@
+.about {
+	display: flex;
+}
+
+.about__text {
+	text-wrap: pretty;
+	line-height: 1.2rem;
+	max-width: 42rem;
+}
+
+.about__text > p {
+	margin-bottom: 1rem;
+}
+
+.about__img {
+	width: 13rem;
+	height: 13rem;
+}
+
+.me-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: drop-shadow(2px 4px 6px black);
+}

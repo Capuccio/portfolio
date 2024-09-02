@@ -1,0 +1,53 @@
+---
+import './Experiences.css';
+
+const EXPERIENCES = [
+	{
+		name: "Fullstack Developer",
+		company: "Freelancer",
+		date: "Actualmente...",
+		description:
+			"Mantuve y mejoré el Panel Administrativo, solucionando errores, mejorando rendimiento y añadiendo módulos. Desarrollé features del marketplace con el diseñador UX/UI, actualicé estilos CSS, y colaboré con el equipo de backend para trabajar endpoints."
+	},
+	{
+		name: "Ssr Frontend",
+		company: "Toucan Talent",
+		date: "Diciembre 2022 - Julio 2023",
+		description:
+			"Trabajé con metodología Scrum en tareas asignadas usando TypeScript y Styled Components basados en diseños de Figma. Colaboré con el equipo de backend para crear/adaptar endpoints, mejoré el rendimiento de la aplicación, refactoricé código legado y apliqué buenas prácticas de clean code y principios SOLID."
+	},
+	{
+		name: "Junior Frontend",
+		company: "Pharol",
+		date: "Marzo 2021 - Enero 2023",
+		description:
+			"Mantuve y mejoré el Panel Administrativo, solucionando errores, mejorando rendimiento y añadiendo módulos. Desarrollé features del marketplace con el diseñador UX/UI, actualicé estilos CSS, y colaboré con el equipo de backend para trabajar endpoints."
+	}
+]
+---
+
+<div class="experiences">
+	<ol class="remove-style-ol-ul">
+		{EXPERIENCES.map((experience) => (
+			<li>
+				<div class="experience">
+					<span class="experience__dot">•</span>
+					<div class="experience-info">
+						<div class="experience-title">
+							<h3 class="experience-title__job">
+							{experience.name}
+							</h3>
+							<h4>{experience.company}</h4>
+							<span class="experience-title__time">
+								<time>{experience.date}</time>
+							</span>
+						</div>
+						<div>
+							{experience.description}
+						</div>
+					</div>
+				</div>
+			</li>
+		))}
+	</ol>
+</div>

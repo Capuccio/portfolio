@@ -1,14 +1,45 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Headline from '../components/Headline/Headline.astro';
-
 import '../styles/index.css';
+
+import Layout from '../layouts/Layout.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import Headline from '../components/Headline/Headline.astro';
+import SectionContainer from '../components/Section/SectionContainer/SectionContainer.astro';
+import SectionTitle from '../components/Section/SectionTitle/SectionTitle.astro';
+import Experiences from '../components/Experiences/Experiences.astro';
+import Projects from '../components/Projects/Projects.astro';
+import About from '../components/About/About.astro';
+import User from '../components/icons/User.astro';
+
 ---
 <Layout title="Jose Cordova">
 	<main>
 		<Headline />
+
+		<div class="sections-wrapper">
+			<SectionContainer id="experience">
+				<SectionTitle>
+					<Briefcase class="prueba" />
+					Experiencia
+				</SectionTitle>
+				<Experiences />
+			</SectionContainer>
+
+			<SectionContainer id="projects">
+				<SectionTitle>
+					<Briefcase class="p" />
+					Proyectos
+				</SectionTitle>
+				<Projects />
+			</SectionContainer>
+
+			<SectionContainer id="about">
+				<SectionTitle>
+					<User class="p" />
+					Sobre mí
+				</SectionTitle>
+				<About />
+			</SectionContainer>
+		</div>
 	</main>
 </Layout>
-
-<style>
-</style>

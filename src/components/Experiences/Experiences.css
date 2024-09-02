@@ -1,0 +1,35 @@
+.experiences {
+	display: flex;
+	align-items: center;
+}
+
+.experience {
+	display: flex;
+	margin: 0 3rem;
+	position: relative;
+	padding: 1.2rem 0;
+}
+
+.experience::before {
+	content: "";
+	border-left: 2px solid red;
+	margin-right: 40px;
+	position: absolute;
+	height: 100%;
+	left: -36px;
+}
+
+.experience__dot {
+	color: blue;
+	font-size: 3rem;
+	position: absolute;
+	left: -43.5px;
+}
+
+.experience-info {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+}

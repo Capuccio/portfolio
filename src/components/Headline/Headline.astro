@@ -1,24 +1,51 @@
 ---
-import { Image } from 'astro:assets';
-import Avatar from '../../assets/avatar.png';
 import './Headline.css';
+import LinkedIn from '../icons/LinkedIn.astro';
+import Email from '../icons/Email.astro';
+
+const CONTACTS = [
+	{
+		name: "Correo",
+		link: "mailto:jmcordova1999@gmail.com",
+		icon: Email
+	},
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/in/cordovajose/",
+		icon: LinkedIn
+	},
+	{
+		name: "Correo",
+		link: "mailto:jmcordova1999@gmail.com",
+		icon: Email
+	},
+	{
+		name: "Correo",
+		link: "mailto:jmcordova1999@gmail.com",
+		icon: Email
+	}
+]
 ---
 
 <section data-section="headline" class="headline">
+	<span class="headline__name">
+		Soy José Córdova
+	</span>
 	<div class="avatar">
 		<div class="avatar__img">
-			<Image src={Avatar} alt="Avatar" width={128} />
+			<img src="/avatar.webp" alt="Avatar" />
 		</div>
-		<span class="avatar__name">
-			Jose Cordova
-		</span>
-		<div class="avatar__social">
-			<span>
-				<svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
-			</span>
-			<span>
-				<svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
-			</span>
-		</div>
+	</div>
+	<p class="headline__description">
+		<strong>Ingeniero en Informática</strong> con +5 años de experiencia de Quito, Ecuador 🇪🇨.
+		Avanzando hacia la digitalización.
+	</p>
+	<div class="headline__social">
+		{CONTACTS.map((contact) => (
+			<a href={contact.link} target="_blank">
+				<contact.icon />
+				{contact.name}
+			</a>
+		))}
 	</div>
 </section>

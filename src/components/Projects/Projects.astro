@@ -1,0 +1,112 @@
+---
+import './Projects.css';
+
+import ReactJS from '../icons/ReactJS.astro';
+import NextJS from '../icons/NextJS.astro';
+import Expo from '../icons/Expo.astro';
+import Tailwind from '../icons/Tailwind.astro';
+import StyledComponents from '../icons/Styledcomponents.astro';
+import Express from '../icons/Express.astro';
+import NestJS from '../icons/NestJS.astro';
+import PostgreSQL from '../icons/PostgreSQL.astro';
+
+const TAGS = {
+	REACT: {
+		name: "React",
+		class: "bg-react text-white",
+		icon: ReactJS
+	},
+	EXPRESS: {
+		name: "Express",
+		class: "bg-white",
+		icon: Express
+	},
+	NEXTJS: {
+		name: "Next.js",
+		class: "bg-nextjs text-white",
+		icon: NextJS
+	},
+	EXPO: {
+		name: "Expo",
+		class: "bg-white",
+		icon: Expo
+	},
+	TAILWIND: {
+		name: "Tailwind",
+		class: "bg-tailwind text-white",
+		icon: Tailwind
+	},
+	STYLEDCOMPONENTS: {
+		name: "Styled Components",
+		class: "bg-styledcomponents text-white",
+		icon: StyledComponents
+	},
+	NESTJS: {
+		name: "NestJS",
+		class: "bg-black text-white",
+		icon: NestJS
+	},
+	POSTGRESQL: {
+		name: "Postgres",
+		class: "bg-white",
+		icon: PostgreSQL
+	}
+}
+
+const PROJECTS = [
+	{
+		title: "La Gran Rifa",
+		image: "/larifa.webp",
+		description:
+			"Plataforma web que facilita la venta de boletos y la gestión desde un panel administrativo. Utiliza PWA para ofrecer una experiencia de app nativa.",
+		tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.POSTGRESQL]
+	},
+	{
+		title: "Sport Pro",
+		image: "/tournaments.webp",
+		description:
+			"Aplicación móvil híbrida para la gestión de torneos deportivos",
+		tags: [TAGS.NEXTJS, TAGS.EXPO, TAGS.NESTJS, TAGS.POSTGRESQL]
+	},
+	{
+		title: "Weather App",
+		image: "/weather.webp",
+		description:
+			"Plataforma web hecha como Hobbie de práctica que te permite ver el clima en tu sector.",
+		tags: [TAGS.REACT, TAGS.TAILWIND]
+	},
+	{
+		title: "Tarjeta Crédito",
+		image: "/card_form.webp",
+		description:
+			"Página web hecha por Hobbie para simular un formulario de pago con una tarjeta de crédito o débito.",
+		tags: [TAGS.NEXTJS, TAGS.STYLEDCOMPONENTS]
+	},
+]
+---
+
+<div class="projects">
+	{PROJECTS.map((project) => (
+		<article class="project">
+			<div class="image-container">
+				<div class="portrait-holder">
+					<img class="portrait" src={project.image} />
+				</div>
+			</div>
+			<div>
+				<span>{project.title}</span>
+				<p>{project.description}</p>
+			</div>
+			<ul class="projects__tags remove-style-ol-ul">
+				{project.tags.map((tag) => (
+					<li>
+						<span class={`tag ${tag.class}`}>
+							<tag.icon class="logo-icon" />
+							{tag.name}
+						</span>
+					</li>
+				))}
+			</ul>
+		</article>
+	))}
+</div>
