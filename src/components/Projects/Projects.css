@@ -7,7 +7,6 @@
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	grid-template-rows: auto;
 	gap: 1.90rem;
-	z-index: 999;
 }
 
 .project-wrapper {
@@ -24,7 +23,7 @@
 	min-height: 12rem;
 	box-shadow: 8px 8px 10px #bebebe,
 							-8px -8px 20px #ffffff;
-	background-color: white;
+	background-color: #f8f8f8;
 }
 
 .image-container {
@@ -34,6 +33,7 @@
 .portrait-holder {
 	border-radius: var(--radius) var(--radius) 0 0;
 	overflow: clip;
+	mask-image: linear-gradient(black 92%, transparent);
 }
 
 .portrait {
