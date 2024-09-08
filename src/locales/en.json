@@ -1,0 +1,80 @@
+{
+	"header": [
+		{
+			"title": "Experience",
+			"label": "experience",
+			"url": "#experience"
+		},
+		{
+			"title": "Projects",
+			"label": "projects",
+			"url": "#projects"
+		},
+		{
+			"title": "Services",
+			"label": "services",
+			"url": "#services"
+		},
+		{
+			"title": "About me",
+			"label": "about",
+			"url": "#about"
+		}
+	],
+	"headline": {
+		"name": "I'm Jose Cordova",
+		"description": "<strong>Computer Engineer</strong> with +5 years of experience from Quito, Ecuador 🇪🇨. Moving towards digitalization."
+	},
+	"experiences": [
+    {
+      "name": "Fullstack Developer",
+      "company": "Freelancer",
+      "date": "Currently...",
+      "description": "Maintained and improved the Admin Panel, fixing bugs, enhancing performance, and adding modules. Developed marketplace features with the UX/UI designer, updated CSS styles, and collaborated with the backend team on endpoints."
+    },
+    {
+      "name": "Semi Senior Frontend",
+      "company": "Toucan Talent",
+      "date": "December 2022 - July 2023",
+      "description": "Worked with Scrum methodology on tasks using TypeScript and Styled Components based on Figma designs. Collaborated with the backend team to create/adapt endpoints, improved application performance, refactored legacy code, and applied clean code practices and SOLID principles."
+    },
+    {
+      "name": "Junior Frontend",
+      "company": "Pharol",
+      "date": "March 2021 - January 2023",
+      "description": "Maintained and improved the Admin Panel, fixing bugs, enhancing performance, and adding modules. Developed marketplace features with the UX/UI designer, updated CSS styles, and collaborated with the backend team on endpoints."
+    }
+  ],
+	"projects": [
+    {
+      "title": "The Big Raffle",
+      "image": "/larifa.webp",
+      "description": "A web platform that facilitates ticket sales and management from an admin panel. Uses PWA to offer a native app experience.",
+      "tags": ["REACT", "EXPRESS", "POSTGRESQL"]
+    },
+    {
+      "title": "Sport Pro",
+      "image": "/tournaments.webp",
+      "description": "Hybrid mobile app for managing sports tournaments",
+      "tags": ["NEXTJS", "EXPO", "NESTJS", "POSTGRESQL"]
+    },
+    {
+      "title": "Weather App",
+      "image": "/weather.webp",
+      "description": "A web platform made as a hobby practice that lets you see the weather in your area.",
+      "tags": ["REACT", "TAILWIND"],
+      "github": "https://github.com/Capuccio/weather-application",
+      "link": "https://weather-react-lilac.vercel.app"
+    },
+    {
+      "title": "Credit Card",
+      "image": "/card_form.webp",
+      "description": "A web page made as a hobby to simulate a payment form with a credit or debit card.",
+      "tags": ["NEXTJS", "STYLEDCOMPONENTS"],
+      "github": "https://github.com/Capuccio/interactive-card",
+      "link": "https://interactive-card-sand.vercel.app"
+    }
+	],
+	"about": "<p>My name is José Córdova, a computer engineer who started programming when I was 15 years old with my first calculator. Curiosity led me to pursue a career in computing.</p> <p>Over the years, I have consolidated my experience with <strong>freelance projects and startup companies</strong>.</p> <p>I enjoy sharing my knowledge, and I have helped friends and acquaintances enter the world of programming by teaching classes.</p>"
+
+}

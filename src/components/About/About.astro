@@ -1,19 +1,10 @@
 ---
 import './About.css';
----
 
+const { about } = Astro.props;
+---
 <article class="about">
-	<div class="about__text">
-		<p>
-			Me llamo José Córdova, un ingeniero en informática que comenzó en la programación cuándo a los 15 años hice mi primera calculadora. La curiosidad me llevó a dedicarme a la informática.
-		</p>
-		<p>
-			A lo largo de los años he consolidando mi experiencia con <strong>proyectos freelance y empresas Startup</strong>.
-		</p>
-		<p>
-			Disfruto mucho compartir mis conocimientos, he ayudado amigos y conocidos a adentrarse en el mundo de la programación impartiendo clases.
-		</p>
-	</div>
+	<div class="about__text" set:html={about}></div>
 	<div class="about__img">
 		<img class="me-img" src="/me.webp"/>
 	</div>

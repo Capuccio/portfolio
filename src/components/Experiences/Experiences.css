@@ -5,7 +5,7 @@
 
 .experience {
 	display: flex;
-	margin: 0 3rem;
+	margin: 0 0.5rem 0 3rem;
 	position: relative;
 	padding: 1.2rem 0;
 }
@@ -46,10 +46,16 @@
 
 .experience-info__description {
 	margin-top: 1rem;
-	max-width: 75ch;
 	text-wrap: pretty;
 	color: var(--text-gray);
 }
 
 @media (min-width: 768px) {
+	.experience {
+		margin: 0 3rem;
+	}
+
+	.experience-info__description {
+		max-width: 75ch;
+	}
 }

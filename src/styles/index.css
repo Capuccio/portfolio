@@ -1,7 +1,8 @@
-main {
-	border: 0px solid red;
-}
-
 .sections-wrapper > section:not(:first-child) {
 	margin-top: 6rem;
+}
+
+.section-icon {
+	width: 1.5rem;
+	height: 1.5rem;
 }

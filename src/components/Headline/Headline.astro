@@ -3,9 +3,11 @@ import './Headline.css';
 import LinkedIn from '../icons/LinkedIn.astro';
 import Email from '../icons/Email.astro';
 
+const { headline } = Astro.props;
+
 const CONTACTS = [
 	{
-		name: "Correo",
+		name: "Email",
 		link: "mailto:jmcordova1999@gmail.com",
 		icon: Email
 	},
@@ -13,39 +15,26 @@ const CONTACTS = [
 		name: "LinkedIn",
 		link: "https://www.linkedin.com/in/cordovajose/",
 		icon: LinkedIn
-	},
-	{
-		name: "Correo",
-		link: "mailto:jmcordova1999@gmail.com",
-		icon: Email
-	},
-	{
-		name: "Correo",
-		link: "mailto:jmcordova1999@gmail.com",
-		icon: Email
 	}
 ]
 ---
 
 <section data-section="headline" class="headline">
 	<span class="headline__name">
-		Soy Jose Cordova
+		{ headline.name }
 	</span>
 	<div class="avatar">
 		<div class="avatar__img">
 			<img src="/avatar.webp" alt="Avatar" />
 		</div>
 	</div>
-	<p class="headline__description">
-		<strong>Ingeniero en Informática</strong> con +5 años de experiencia de Quito, Ecuador 🇪🇨.
-		Avanzando hacia la digitalización.
-	</p>
-	<nav class="headline__social">
+	<p class="headline__description" set:html={headline.description} />
+	<div class="headline__social">
 		{CONTACTS.map((contact) => (
-			<a href={contact.link} target="_blank">
+			<a class="general-pill" href={contact.link} target="_blank">
 				<contact.icon />
 				{contact.name}
 			</a>
 		))}
-	</nav>
+	</div>
 </section>

@@ -54,44 +54,11 @@ const TAGS = {
 	}
 }
 
-const PROJECTS = [
-	{
-		title: "La Gran Rifa",
-		image: "/larifa.webp",
-		description:
-			"Plataforma web que facilita la venta de boletos y la gestión desde un panel administrativo. Utiliza PWA para ofrecer una experiencia de app nativa.",
-		tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.POSTGRESQL]
-	},
-	{
-		title: "Sport Pro",
-		image: "/tournaments.webp",
-		description:
-			"Aplicación móvil híbrida para la gestión de torneos deportivos",
-		tags: [TAGS.NEXTJS, TAGS.EXPO, TAGS.NESTJS, TAGS.POSTGRESQL]
-	},
-	{
-		title: "Weather App",
-		image: "/weather.webp",
-		description:
-			"Plataforma web hecha como Hobbie de práctica que te permite ver el clima en tu sector.",
-		tags: [TAGS.REACT, TAGS.TAILWIND],
-		github: "https://github.com/Capuccio/weather-application",
-		link: "https://weather-react-lilac.vercel.app"
-	},
-	{
-		title: "Tarjeta Crédito",
-		image: "/card_form.webp",
-		description:
-			"Página web hecha por Hobbie para simular un formulario de pago con una tarjeta de crédito o débito.",
-		tags: [TAGS.NEXTJS, TAGS.STYLEDCOMPONENTS],
-		github: "https://github.com/Capuccio/interactive-card",
-		link: "https://interactive-card-sand.vercel.app"
-	}
-]
+const { projects } = Astro.props;
 ---
 
 <div class="projects">
-	{PROJECTS.map((project) => (
+	{projects.map((project: any) => (
 		<div class="project-wrapper">
 			<article class="project">
 				<div class="image-container">
@@ -103,24 +70,28 @@ const PROJECTS = [
 					<h4 class="project-info__title">{project.title}</h4>
 					<p class="project-info__description">{project.description}</p>
 				</div>
-				<ul class="projects__tags remove-style-ol-ul">
-					{project.tags.map((tag) => (
-						<li>
-							<span class={`tag ${tag.class}`}>
-								<tag.icon class="logo-icon" />
-								{tag.name}
-							</span>
-						</li>
-					))}
+				<ul class="projects__tags">
+					{project.tags.map((tagKey: keyof typeof TAGS) => {
+						const tag = TAGS[tagKey];
+
+						return (
+							<li>
+								<span class={`tag ${tag.class}`}>
+									<tag.icon class="logo-icon" />
+									{tag.name}
+								</span>
+							</li>
+						)
+					})}
 				</ul>
 			</article>
 			{(project.link || project.github) ? (
 				<footer class="project-footer">
 					{project.github && (
-						<a href={project.github} target="_blank" class="project-pill"><Github /> Código</a>
+						<a href={project.github} target="_blank" class="general-pill project-pill"><Github /> Código</a>
 					)}
 					{project.link && (
-						<a href={project.link} target="_blank" class="project-pill"><Url /> Web</a>
+						<a href={project.link} target="_blank" class="general-pill project-pill"><Url /> Web</a>
 					)}
 				</footer>
 			) : null}

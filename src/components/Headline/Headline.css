@@ -1,15 +1,18 @@
 .headline {
-	min-height: 24rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	padding: 9rem 0;
+	padding: 3.5rem 1.2rem 0;
+	margin-bottom: 14rem;
 }
 
 .headline__name {
 	font-weight: bold;
-	font-size: 4rem;
+	font-size: 2.3rem;
+	color: transparent;
+	background-image: linear-gradient(to right, #174417, #2A9A57);
+	background-clip: text;
+	text-align: center;
 }
 
 .avatar__img {
@@ -24,25 +27,45 @@
 }
 
 .headline__description {
-	font-size: 1.5rem;
-	margin-top: 1rem;
-	max-width: 60ch;
+	font-size: 1.15rem;
+	margin-top: 2rem;
+	text-wrap: pretty;
 }
 
 .headline__social {
-	margin-top: 1rem;
 	display: flex;
-	justify-content: center;
 	flex-wrap: wrap;
-	max-width: 32rem;
-	gap: 12px;
+	margin-top: 2.5rem;
+	gap: 0.35rem;
 }
 
 .headline__social > a {
 	display: flex;
 	align-items: center;
+	gap: 0.1rem;
 	padding: 0.25rem 1rem;
 	border-radius: 99px;
 	font-size: 0.95rem;
-	border: 1px solid gray;
+}
+
+@media (min-width: 768px) {
+	.headline {
+		padding: 9.5rem 0 0;
+	}
+
+	.headline__name {
+		font-size: 4rem;
+	}
+
+	.headline__description {
+		font-size: 1.5rem;
+		margin-top: 1rem;
+		max-width: 60ch;
+	}
+
+	.headline__social {
+		margin-top: 1rem;
+		max-width: 42rem;
+		gap: 0.75rem;
+	}
 }

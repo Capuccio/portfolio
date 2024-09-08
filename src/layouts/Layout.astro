@@ -3,6 +3,8 @@ interface Props {
 	title: string;
 }
 
+import { ViewTransitions } from 'astro:transitions';
+
 const { title } = Astro.props;
 ---
 
@@ -18,33 +20,76 @@ const { title } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
+		<div class="page-bg" />
 		<slot />
 	</body>
 </html>
 <style is:global>
 	:root {
+		color-scheme: light dark;
+		--text-color: rgb(0, 0, 0);
+		--website-width: 57rem;
 		--text-gray: rgba(75, 85, 99, 0.85);
+		--general-pill-bg: rgba(255, 255, 255, 0.95);
+		--general-pill-bg-hover: rgba(34, 41, 55, 0.95);
+		--website-bg: #fcfcfc;
+		--website-bg-image-gradient: radial-gradient(#e5e7eb 1px, transparent 1px);
 	}
+	
+	.dark {
+		--text-color: rgb(255, 255, 255);
+		--general-pill-bg: rgba(34, 41, 55, 0.95);
+		--general-pill-bg-hover: rgba(255, 255, 255, 0.95);
+		--text-gray: rgba(200, 210, 230, 1);
+		--website-bg: rgba(24, 24, 24, 1);
+		--website-bg-image-gradient: radial-gradient(#ffffff33 1px, var(--website-bg) 1px);
+		}
 
-	* {
+	*, *::before, *::after {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
 
+	html {
+		scroll-behavior: smooth;
+	}
+
 	body {
-		background: #F5F5F5;
+		color: var(--text-color);
 		font-family: "Poppins", sans-serif;
 		font-weight: 400;
 		font-style: normal;
+		background-color: var(--website-bg);
+
 	}
 
 	a:any-link {
 		text-decoration: none;
 		color: inherit;
 		cursor: pointer;
+	}
+
+	ol, ul {
+		list-style-type: none;
+	}
+
+	.page-bg {
+		position: absolute;
+		inset: 0px;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		background-color: var(--website-bg);
+		background-image: var(--website-bg-image-gradient);
+		background-size: 1rem 1rem;
 	}
 
 	.bg-white {
@@ -56,11 +101,23 @@ const { title } = Astro.props;
 		height: 1rem;
 	}
 
-	.remove-style-ol-ul {
-		list-style-type: none;
-	}
-
 	.text-white {
 		color: white;
+	}
+
+	.general-pill {
+		background-color: var(--general-pill-bg);
+		border: 1px solid rgba(128, 128, 128, 0.5);
+		transition: all 0.15s ease;
+	}
+
+	.general-pill:hover {
+		background-color: var(--general-pill-bg-hover);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.page-bg {
+			background-size: 1.25rem 1.25rem;
+		}
 	}
 </style>

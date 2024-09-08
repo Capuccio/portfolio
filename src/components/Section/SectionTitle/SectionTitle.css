@@ -1,5 +1,7 @@
 .section-title {
 	display: flex;
 	align-items: center;
+	gap: 0.30rem;
 	margin-bottom: 12px;
+	font-size: 1.5rem;
 }

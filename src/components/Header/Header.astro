@@ -1,0 +1,66 @@
+---
+import "./Header.css";
+import Options from "./Options.astro";
+
+const { header } = Astro.props;
+---
+
+<header class="header">
+	<nav class="header-nav">
+		<div class="header__logo">
+			<img src="/avatar.webp"/>
+		</div>
+		<div class="header__links">
+			{header.map((navItem: any) => (
+				<a
+					href={navItem.url}
+					aria-label={navItem.label}
+				>
+					{navItem.title}
+				</a>
+			))}
+		</div>
+		<Options />
+	</nav>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+		const sections = document.querySelectorAll("section");
+		const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("link-active")
+            } else {
+              item.classList.remove("link-active")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
+
+		document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  });
+</script>

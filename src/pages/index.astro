@@ -3,42 +3,46 @@ import '../styles/index.css';
 
 import Layout from '../layouts/Layout.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
+import CodeDots from '../components/icons/CodeDots.astro';
+import User from '../components/icons/User.astro';
+import Header from '../components/Header/Header.astro';
 import Headline from '../components/Headline/Headline.astro';
 import SectionContainer from '../components/Section/SectionContainer/SectionContainer.astro';
 import SectionTitle from '../components/Section/SectionTitle/SectionTitle.astro';
 import Experiences from '../components/Experiences/Experiences.astro';
 import Projects from '../components/Projects/Projects.astro';
 import About from '../components/About/About.astro';
-import User from '../components/icons/User.astro';
 
+import translation from '../locales/es.json';
 ---
 <Layout title="Jose Cordova">
 	<main>
-		<Headline />
+		<Header header={translation.header} />
+		<Headline headline={translation.headline} />
 
 		<div class="sections-wrapper">
-			<SectionContainer id="experience">
+			<SectionContainer id={translation.header[0].label}>
 				<SectionTitle>
-					<Briefcase class="prueba" />
+					<Briefcase class="section-icon" />
 					Experiencia
 				</SectionTitle>
-				<Experiences />
+				<Experiences experiences={translation.experiences} />
 			</SectionContainer>
 
-			<SectionContainer id="projects">
+			<SectionContainer id={translation.header[1].label}>
 				<SectionTitle>
-					<Briefcase class="p" />
+					<CodeDots class="section-icon" />
 					Proyectos
 				</SectionTitle>
-				<Projects />
+				<Projects projects={translation.projects} />
 			</SectionContainer>
 
-			<SectionContainer id="about">
+			<SectionContainer id={translation.header[3].label}>
 				<SectionTitle>
-					<User class="p" />
+					<User class="section-icon" />
 					Sobre mí
 				</SectionTitle>
-				<About />
+				<About about={translation.about} />
 			</SectionContainer>
 		</div>
 	</main>

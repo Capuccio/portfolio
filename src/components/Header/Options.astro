@@ -1,0 +1,158 @@
+---
+import Dark from "../icons/Dark.astro";
+import Light from "../icons/Light.astro";
+
+const LANGS = ["ES", "EN"]
+const THEMES = [
+	{
+		title: "Claro",
+		theme: "light",
+	},
+	{
+		title: "Oscuro",
+		theme: "dark"
+	},
+	{
+		title: "Sistema",
+		theme: "system"
+	}
+];
+---
+
+<div class="options">
+	<div id="languages-button" class="options-wrap">
+		<button>ES</button>
+		<div id="languages-list" class="options-list">
+			<ul>
+				{LANGS.map((lang) => (
+					<li class="option">{lang}</li>
+				))}
+			</ul>
+		</div>
+	</div>
+	<div id="themes-button" class="options-wrap">
+		<button>
+			<Light id="light" class="toggle-icon" />
+			<Dark id="dark" class="toggle-icon" />
+		</button>
+		<div id="themes-list" class="options-list">
+			<ul>
+				{THEMES.map((theme) => (
+					<li class="theme-option option" data-theme={theme.theme}>{theme.title}</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<style>
+	.options {
+		display: flex;
+		align-items: center;
+	}
+
+	.options-wrap {
+		position: relative;
+	}
+
+	button {
+		color: var(--text-color);
+		background-color: transparent;
+		border: 0;
+		min-height: 2rem;
+		min-width: 2rem;
+		display: flex;
+		align-items: center;
+	}
+
+	button:hover {
+		cursor: pointer;
+		color: #4CAF50;
+	}
+
+	button > svg {
+		position: absolute;
+	}
+
+	.options-list {
+		display: none;
+		position: absolute;
+		background-color: rgba(252, 255, 253, 0.8);
+		backdrop-filter: blur(8px);
+		padding: 0.45rem;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+		border-radius: 0.325rem;
+		min-width: 5rem;
+	}
+
+	.option {
+		padding: 0.375rem 0.5rem;
+		font-size: 0.85rem;
+		border-radius: 0.17rem;
+		color: var(--text-color);
+	}
+
+	.option:hover {
+		color: white;
+		cursor: pointer;
+		background-color: rgba(34, 41, 55, 0.95);
+	}
+
+	#languages-list.open, #themes-list.open {
+		display: inline;
+	}
+
+	html.dark .options-list {
+		background-color: rgba(32, 36, 42, 0.8);
+	}
+</style>
+
+<script is:inline>
+	const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+	const themesNav = document.getElementById("themes-list");
+	const languagesNav = document.getElementById("languages-list");
+
+	const updateTheme = () => {
+		const theme = localStorage.getItem("theme") ?? (matchMedia.matches ? "dark" : "light");
+		document.documentElement.classList.toggle("dark", theme === "dark" || (theme === "system" && matchMedia.matches));
+
+		document.querySelectorAll(".toggle-icon").forEach((icon) => {
+			if (theme === "system") {
+				icon.style.scale = (matchMedia.matches && icon.id === "dark") || (!matchMedia.matches && icon.id === "light") ? "1" : "0";
+			} else {
+				icon.style.scale = icon.id === theme ? "1" : "0";
+			}
+		});
+	}
+	updateTheme();
+
+	const toggleButton = (navToOpen, navToClose, event) => {
+		event.stopPropagation();
+		navToClose?.classList.remove("open")
+		navToOpen?.classList.toggle("open");
+	}
+	
+	document.getElementById("languages-button")?.addEventListener("click", (e) => toggleButton(languagesNav, themesNav, e));
+	document.getElementById("themes-button")?.addEventListener("click", (e) => toggleButton(themesNav, languagesNav, e));
+
+	document.querySelectorAll(".theme-option").forEach((element) => {
+		element.addEventListener("click", (selected) => {
+			const optionSelected = selected.target.getAttribute("data-theme");
+			if (optionSelected !== null) localStorage.setItem("theme", optionSelected.toLowerCase().trim());
+			updateTheme();
+		});
+	});
+
+	document.addEventListener("click", () => {
+		languagesNav?.classList.remove("open");
+		themesNav?.classList.remove("open");
+	});
+
+	matchMedia.addEventListener("change", updateTheme);
+
+	document.addEventListener("astro:after-swap", () => {
+		console.log("hi")
+		updateTheme();
+		window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+	})
+</script>

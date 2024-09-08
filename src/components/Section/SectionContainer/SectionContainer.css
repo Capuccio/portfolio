@@ -1,4 +1,12 @@
 .section {
-	max-width: 57rem;
-	margin: 0 auto;
+	scroll-margin-top: 5.25rem;
+}
+
+
+@media (min-width: 768px) {
+	.section {
+		max-width: var(--website-width);
+		margin: 0 auto;
+		scroll-margin-top: 5.25rem;
+	}
 }

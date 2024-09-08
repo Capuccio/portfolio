@@ -4,9 +4,10 @@
 
 .projects {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(1, minmax(0, 1fr));
 	grid-template-rows: auto;
-	gap: 1.90rem;
+	gap: 2.90rem;
+	padding: 0 0.8rem;
 }
 
 .project-wrapper {
@@ -21,9 +22,13 @@
 	flex-direction: column;
 	border-radius: var(--radius);
 	min-height: 12rem;
-	box-shadow: 8px 8px 10px #bebebe,
-							-8px -8px 20px #ffffff;
+	box-shadow: 0 6px 27px 2px rgba(40, 0, 95, .15);
 	background-color: #f8f8f8;
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+	box-shadow: 0 12px 30px 2px rgba(40, 0, 95,.3);
 }
 
 .image-container {
@@ -93,8 +98,6 @@
 }
 
 .project-pill {
-	border: 1px solid rgba(0, 0, 0, 0.25);
-	background-color: rgb(243, 244, 246);
 	padding: 0.5rem 0.75rem;
 	border-radius: 0.75rem;
 	font-size: 1rem;
@@ -103,11 +106,6 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.25rem;
-	transition: all 0.4s ease;
-}
-
-.project-pill:hover {
-	background-color: white;
 }
 
 .bg-react {
@@ -136,4 +134,21 @@
 
 .bg-styledcomponents {
 	background: linear-gradient(30deg, #dc6f94, #f2b561);
+}
+
+.dark .project {
+	background-color: rgba(32, 36, 42, 1);
+}
+
+.dark .project-info__title {
+	color: #E5E5E5;
+}
+
+@media (min-width: 768px) {
+	.projects {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: auto;
+		gap: 1.90rem;
+		padding: 0;
+	}
 }

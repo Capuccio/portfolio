@@ -1,0 +1,86 @@
+{
+	"header": [
+		{
+			"title": "Experiencia",
+			"label": "experiencia",
+			"url": "#experiencia"
+		},
+		{
+			"title": "Proyectos",
+			"label": "proyectos",
+			"url": "#proyectos"
+		},
+		{
+			"title": "Servicios",
+			"label": "servicios",
+			"url": "#servicios"
+		},
+		{
+			"title": "Sobre mí",
+			"label": "sobre-mi",
+			"url": "#sobre-mi"
+		}
+	],
+	"headline": {
+		"name": "Soy Jose Cordova",
+		"description": "<strong>Ingeniero en Informática</strong> con +5 años de experiencia de Quito, Ecuador 🇪🇨. Avanzando hacia la digitalización."
+	},
+	"experiences": [
+		{
+			"name": "Fullstack Developer",
+			"company": "Freelancer",
+			"date": "Actualmente...",
+			"description":
+				"Mantuve y mejoré el Panel Administrativo, solucionando errores, mejorando rendimiento y añadiendo módulos. Desarrollé features del marketplace con el diseñador UX/UI, actualicé estilos CSS, y colaboré con el equipo de backend para trabajar endpoints."
+		},
+		{
+			"name": "Semi Senior Frontend",
+			"company": "Toucan Talent",
+			"date": "Diciembre 2022 - Julio 2023",
+			"description":
+				"Trabajé con metodología Scrum en tareas asignadas usando TypeScript y Styled Components basados en diseños de Figma. Colaboré con el equipo de backend para crear/adaptar endpoints, mejoré el rendimiento de la aplicación, refactoricé código legado y apliqué buenas prácticas de clean code y principios SOLID."
+		},
+		{
+			"name": "Junior Frontend",
+			"company": "Pharol",
+			"date": "Marzo 2021 - Enero 2023",
+			"description":
+				"Mantuve y mejoré el Panel Administrativo, solucionando errores, mejorando rendimiento y añadiendo módulos. Desarrollé features del marketplace con el diseñador UX/UI, actualicé estilos CSS, y colaboré con el equipo de backend para trabajar endpoints."
+		}
+	],
+	"projects": [
+		{
+			"title": "La Gran Rifa",
+			"image": "/larifa.webp",
+			"description":
+				"App web que facilita la venta de boletos y la gestión desde un panel administrativo. Utiliza PWA para ofrecer una experiencia de app nativa.",
+			"tags": ["REACT", "EXPRESS", "POSTGRESQL"]
+		},
+		{
+			"title": "Sport Pro",
+			"image": "/tournaments.webp",
+			"description":
+				"Aplicación móvil híbrida para la gestión de torneos deportivos",
+			"tags": ["NEXTJS", "EXPO", "NESTJS", "POSTGRESQL"]
+		},
+		{
+			"title": "Weather App",
+			"image": "/weather.webp",
+			"description":
+				"Página web hecha como Hobbie de práctica que te permite ver el clima en tu sector.",
+			"tags": ["REACT", "TAILWIND"],
+			"github": "https://github.com/Capuccio/weather-application",
+			"link": "https://weather-react-lilac.vercel.app"
+		},
+		{
+			"title": "Tarjeta Crédito",
+			"image": "/card_form.webp",
+			"description":
+				"Página web hecha por Hobbie para simular un formulario de pago con una tarjeta de crédito o débito.",
+			"tags": ["NEXTJS", "STYLEDCOMPONENTS"],
+			"github": "https://github.com/Capuccio/interactive-card",
+			"link": "https://interactive-card-sand.vercel.app"
+		}
+	],
+	"about": "<p>Me llamo José Córdova, un ingeniero en informática que comenzó en la programación cuándo a los 15 años hice mi primera calculadora. La curiosidad me llevó a dedicarme a la informática.</p> <p>A lo largo de los años he consolidando mi experiencia con <strong>proyectos freelance y empresas Startup</strong></p> <p>Disfruto mucho compartir mis conocimientos, he ayudado amigos y conocidos a adentrarse en el mundo de la programación impartiendo clases.</p>"
+}
