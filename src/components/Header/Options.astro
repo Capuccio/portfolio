@@ -2,7 +2,17 @@
 import Dark from "../icons/Dark.astro";
 import Light from "../icons/Light.astro";
 
-const LANGS = ["ES", "EN"]
+const LANGS = [
+	{
+		title: "ES",
+		url: "/"
+	},
+	{
+		title: "EN",
+		url: "/en"
+	}
+]
+
 const THEMES = [
 	{
 		title: "Claro",
@@ -21,11 +31,13 @@ const THEMES = [
 
 <div class="options">
 	<div id="languages-button" class="options-wrap">
-		<button>ES</button>
+		<button>{Astro.props.lang}</button>
 		<div id="languages-list" class="options-list">
 			<ul>
 				{LANGS.map((lang) => (
-					<li class="option">{lang}</li>
+					<li>
+						<a href={lang.url} class="lang-option option">{lang.title}</a>
+					</li>
 				))}
 			</ul>
 		</div>
@@ -49,10 +61,17 @@ const THEMES = [
 	.options {
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		gap: 0.25rem;
 	}
 
 	.options-wrap {
 		position: relative;
+	}
+
+	.options-wrap:first-of-type > button {
+		font-weight: bold;
+		font-size: 1.1rem;
 	}
 
 	button {
@@ -96,6 +115,10 @@ const THEMES = [
 		color: white;
 		cursor: pointer;
 		background-color: rgba(34, 41, 55, 0.95);
+	}
+
+	.lang-option {
+		display: block;
 	}
 
 	#languages-list.open, #themes-list.open {

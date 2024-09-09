@@ -5,5 +5,8 @@ export default defineConfig({
 	i18n: {
 		defaultLocale: "es",
 		locales: ["es", "en"],
+	},
+	devToolbar: {
+		enabled: false
 	}
 });

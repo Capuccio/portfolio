@@ -29,7 +29,7 @@ const TAGS = {
 	},
 	EXPO: {
 		name: "Expo",
-		class: "bg-white",
+		class: "bg-white text-black",
 		icon: Expo
 	},
 	TAILWIND: {
@@ -73,7 +73,6 @@ const { projects } = Astro.props;
 				<ul class="projects__tags">
 					{project.tags.map((tagKey: keyof typeof TAGS) => {
 						const tag = TAGS[tagKey];
-
 						return (
 							<li>
 								<span class={`tag ${tag.class}`}>
