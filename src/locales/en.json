@@ -11,14 +11,14 @@
 			"url": "#projects"
 		},
 		{
-			"title": "Services",
-			"label": "services",
-			"url": "#services"
-		},
-		{
 			"title": "About me",
 			"label": "about",
 			"url": "#about"
+		},
+    {
+			"title": "Contact",
+			"label": "contact",
+			"url": "mailto:jmcordova1999@gmail.com"
 		}
 	],
 	"headline": {
