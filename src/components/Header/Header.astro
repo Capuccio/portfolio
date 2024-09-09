@@ -37,7 +37,7 @@ const { header, lang } = Astro.props;
   const hamburguerBtn = document.getElementById("hamburguer-nav");
   const headerWrap = document.querySelector(".header");
 
-  hamburguerBtn?.addEventListener("click", (event: MouseEvent) => {
+  hamburguerBtn?.addEventListener("click", () => {
     hamburguerBtn.classList.toggle("active");
     headerWrap?.classList.toggle("active");
   })
