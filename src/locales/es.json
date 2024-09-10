@@ -1,4 +1,18 @@
 {
+	"themes:": [
+		{
+			"title": "Claro",
+			"theme": "light"
+		},
+		{
+			"title": "Oscuro",
+			"theme": "dark"
+		},
+		{
+			"title": "Dispositivo",
+			"theme": "system"
+		}
+	],
 	"header": [
 		{
 			"title": "Experiencia",

@@ -2,6 +2,9 @@
 import Dark from "../icons/Dark.astro";
 import Light from "../icons/Light.astro";
 
+import localES from '../../locales/es.json';
+import localEN from '../../locales/en.json';
+
 const LANGS = [
 	{
 		title: "ES",
@@ -13,25 +16,13 @@ const LANGS = [
 	}
 ]
 
-const THEMES = [
-	{
-		title: "Claro",
-		theme: "light",
-	},
-	{
-		title: "Oscuro",
-		theme: "dark"
-	},
-	{
-		title: "Sistema",
-		theme: "system"
-	}
-];
+const { lang } = Astro.props;
+
 ---
 
 <div class="options">
 	<div id="languages-button" class="options-wrap">
-		<button>{Astro.props.lang}</button>
+		<button>{lang}</button>
 		<div id="languages-list" class="options-list">
 			<ul>
 				{LANGS.map((lang) => (
@@ -49,7 +40,7 @@ const THEMES = [
 		</button>
 		<div id="themes-list" class="options-list">
 			<ul>
-				{THEMES.map((theme) => (
+				{(lang === "ES" ? localES : localEN)["themes:"].map((theme) => (
 					<li class="theme-option option" data-theme={theme.theme}>{theme.title}</li>
 				))}
 			</ul>
