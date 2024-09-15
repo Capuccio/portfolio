@@ -37,7 +37,7 @@
 	],
 	"headline": {
 		"name": "I'm Jose Cordova",
-		"description": "<strong>Computer Engineer</strong> with +5 years of experience from Quito, Ecuador 🇪🇨. Moving towards digitalization."
+		"description": "<strong>Computer Engineer and Freelance FullStack</strong> with +5 years of experience from Quito, Ecuador 🇪🇨. Moving towards digitalization."
 	},
 	"experiences": [
     {
@@ -89,6 +89,6 @@
       "link": "https://interactive-card-sand.vercel.app"
     }
 	],
-	"about": "<p>My name is José Córdova, a computer engineer who started programming when I was 15 years old with my first calculator. Curiosity led me to pursue a career in computing.</p> <p>Over the years, I have consolidated my experience with <strong>freelance projects and startup companies</strong>.</p> <p>I enjoy sharing my knowledge, and I have helped friends and acquaintances enter the world of programming by teaching classes.</p>"
+	"about": "<p>My name is José Córdova, a developer who started programming when I was 15 years old with my first calculator. Curiosity led me to pursue a career in computing.</p> <p>Over the years, I have consolidated my experience with <strong>freelance projects and startup companies</strong>.</p> <p>I enjoy sharing my knowledge, and I have helped friends and acquaintances enter the world of programming by teaching classes.</p>"
 
 }
