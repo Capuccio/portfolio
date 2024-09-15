@@ -6,6 +6,6 @@ const { about } = Astro.props;
 <article class="about">
 	<div class="about__text" set:html={about}></div>
 	<div class="about__img">
-		<img class="me-img" src="/me.webp"/>
+		<img class="me-img" src="/me.webp" alt="about foto" loading="lazy" />
 	</div>
 </article>

@@ -1,5 +1,6 @@
 ---
 import './Projects.css';
+import { Image } from 'astro:assets';
 import ReactJS from '../icons/ReactJS.astro';
 import NextJS from '../icons/NextJS.astro';
 import Expo from '../icons/Expo.astro';
@@ -10,6 +11,17 @@ import NestJS from '../icons/NestJS.astro';
 import PostgreSQL from '../icons/PostgreSQL.astro';
 import Github from '../icons/Github.astro';
 import Url from '../icons/Url.astro';
+import LaRifa from '../../assets/larifa.webp';
+import SportPro from '../../assets/sportpro.webp';
+import Weather from '../../assets/weather.webp';
+import CardForm from '../../assets/card_form.webp';
+
+const PROJECT_IMAGES = {
+	LARIFA: LaRifa,
+	SPORTPRO: SportPro,
+	WEATHER: Weather,
+	CARDFORM: CardForm,
+}
 
 const TAGS = {
 	REACT: {
@@ -54,16 +66,25 @@ const TAGS = {
 	}
 }
 
-const { projects } = Astro.props;
+interface Project {
+	title: string;
+	image: keyof typeof PROJECT_IMAGES;
+	description: string;
+	tags: Array<keyof typeof TAGS>;
+	link?: string;
+	github?: string;
+}
+
+const { projects } = Astro.props as { projects: Project[]};
 ---
 
 <div class="projects">
-	{projects.map((project: any) => (
+	{projects.map((project) => (
 		<div class="project-wrapper">
 			<article class="project">
 				<div class="image-container">
 					<div class="portrait-holder">
-						<img class="portrait" src={project.image} />
+						<Image class="portrait" src={PROJECT_IMAGES[project.image]} alt={project.title} loading="lazy" />
 					</div>
 				</div>
 				<div class="project-info">
@@ -71,7 +92,7 @@ const { projects } = Astro.props;
 					<p class="project-info__description">{project.description}</p>
 				</div>
 				<ul class="projects__tags">
-					{project.tags.map((tagKey: keyof typeof TAGS) => {
+					{project.tags.map((tagKey) => {
 						const tag = TAGS[tagKey];
 						return (
 							<li>

@@ -65,21 +65,21 @@
 	"projects": [
 		{
 			"title": "La Gran Rifa",
-			"image": "/larifa.webp",
+			"image": "LARIFA",
 			"description":
 				"App web que facilita la venta de boletos y la gestión desde un panel administrativo. Utiliza PWA para ofrecer una experiencia de app nativa.",
 			"tags": ["REACT", "EXPRESS", "POSTGRESQL"]
 		},
 		{
 			"title": "Sport Pro",
-			"image": "/tournaments.webp",
+			"image": "SPORTPRO",
 			"description":
 				"Aplicación móvil híbrida para la gestión de torneos deportivos",
 			"tags": ["NEXTJS", "EXPO", "NESTJS", "POSTGRESQL"]
 		},
 		{
 			"title": "Weather App",
-			"image": "/weather.webp",
+			"image": "WEATHER",
 			"description":
 				"Página web hecha como Hobbie de práctica que te permite ver el clima en tu sector.",
 			"tags": ["REACT", "TAILWIND"],
@@ -88,7 +88,7 @@
 		},
 		{
 			"title": "Tarjeta Crédito",
-			"image": "/card_form.webp",
+			"image": "CARDFORM",
 			"description":
 				"Página web hecha por Hobbie para simular un formulario de pago con una tarjeta de crédito o débito.",
 			"tags": ["NEXTJS", "STYLEDCOMPONENTS"],
