@@ -66,12 +66,8 @@ import Home from '../components/icons/Home.astro';
 	}
 </style>
 
-<script>
-	const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-
-	const updateTheme = () => {
-		const theme = localStorage.getItem("theme") ?? (matchMedia.matches ? "dark" : "light");
-		document.documentElement.classList.toggle("dark", theme === "dark" || (theme === "system" && matchMedia.matches));
-	}
-	updateTheme();
+<script is:inline>
+	const matchMedia404 = window.matchMedia("(prefers-color-scheme: dark)");
+	const theme404 = localStorage.getItem("theme") ?? (matchMedia404.matches ? "dark" : "light");
+	document.documentElement.classList.toggle("dark", theme404 === "dark" || (theme404 === "system" && matchMedia404.matches));
 </script>

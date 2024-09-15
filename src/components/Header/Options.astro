@@ -164,8 +164,7 @@ const { lang } = Astro.props;
 
 	matchMedia.addEventListener("change", updateTheme);
 
-	document.addEventListener("astro:after-swap", () => {
-		console.log("hi")
+	document.addEventListener("astro:before-swap", () => {
 		updateTheme();
 		window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
 	})
