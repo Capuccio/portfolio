@@ -7,6 +7,6 @@ export default defineConfig({
 		locales: ["es", "en"],
 	},
 	devToolbar: {
-		enabled: true
+		enabled: false
 	}
 });
