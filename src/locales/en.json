@@ -62,19 +62,19 @@
 	"projects": [
     {
       "title": "The Big Raffle",
-      "image": "/larifa.webp",
+			"image": "LARIFA",
       "description": "A web platform that facilitates ticket sales and management from an admin panel. Uses PWA to offer a native app experience.",
       "tags": ["REACT", "EXPRESS", "POSTGRESQL"]
     },
     {
       "title": "Sport Pro",
-      "image": "/tournaments.webp",
+			"image": "SPORTPRO",
       "description": "Hybrid mobile app for managing sports tournaments",
       "tags": ["NEXTJS", "EXPO", "NESTJS", "POSTGRESQL"]
     },
     {
       "title": "Weather App",
-      "image": "/weather.webp",
+			"image": "WEATHER",
       "description": "A web platform made as a hobby practice that lets you see the weather in your area.",
       "tags": ["REACT", "TAILWIND"],
       "github": "https://github.com/Capuccio/weather-application",
@@ -82,7 +82,7 @@
     },
     {
       "title": "Credit Card",
-      "image": "/card_form.webp",
+			"image": "CARDFORM",
       "description": "A web page made as a hobby to simulate a payment form with a credit or debit card.",
       "tags": ["NEXTJS", "STYLEDCOMPONENTS"],
       "github": "https://github.com/Capuccio/interactive-card",
